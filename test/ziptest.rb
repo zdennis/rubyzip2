@@ -1388,7 +1388,7 @@ class ZipFileExtractTest < Test::Unit::TestCase
 
   def setup
     super
-    File.rm(EXTRACTED_FILENAME) if File.exists?(EXTRACTED_FILENAME)
+    FileUtils.rm(EXTRACTED_FILENAME) if File.exists?(EXTRACTED_FILENAME)
   end
 
   def test_extract
@@ -1492,7 +1492,7 @@ class ZipFileExtractDirectoryTest < Test::Unit::TestCase
     super
 
     Dir.rmdir(TEST_OUT_NAME)   if File.directory? TEST_OUT_NAME
-    File.rm(TEST_OUT_NAME) if File.exists?    TEST_OUT_NAME
+    FileUtils.rm(TEST_OUT_NAME) if File.exists?    TEST_OUT_NAME
   end
     
   def test_extractDirectory

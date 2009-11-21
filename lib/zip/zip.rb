@@ -845,21 +845,21 @@ module Zip
     
     def create_directory(destPath)
       if File.directory? destPath
-	return
+        return
       elsif File.exists? destPath
-	if block_given? && yield(self, destPath)
-	  File.rm_f destPath
-	else
-	  raise ZipDestinationFileExistsError,
-	    "Cannot create directory '#{destPath}'. "+
-	    "A file already exists with that name"
-	end
+        if block_given? && yield(self, destPath)
+          FileUtils.rm(destPath)
+        else
+          raise ZipDestinationFileExistsError,
+            "Cannot create directory '#{destPath}'. "+
+            "A file already exists with that name"
+        end
       end
       Dir.mkdir destPath
       set_extra_attributes_on_path(destPath)
     end
 
-# BUG: create_symlink() does not use &onExistsProc
+    # BUG: create_symlink() does not use &onExistsProc
     def create_symlink(destPath)
       stat = nil
       begin
@@ -880,9 +880,9 @@ module Zip
               "A symlink already exists with that name"
           end
         else
-	  raise ZipDestinationFileExistsError,
-	    "Cannot create symlink '#{destPath}'. "+
-	    "A file already exists with that name"
+          raise ZipDestinationFileExistsError,
+            "Cannot create symlink '#{destPath}'. "+
+            "A file already exists with that name"
         end
       end
 
@@ -1565,7 +1565,7 @@ module Zip
       tmpFilename = tmpfile.path
       tmpfile.close
       if yield tmpFilename
-        File.mv(tmpFilename, name)
+        FileUtils.mv(tmpFilename, name)
       end
     end
     
