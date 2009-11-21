@@ -118,7 +118,7 @@ module IOExtras  #:nodoc:
 
 
     def print(*params)
-      self << params.to_s << $\.to_s
+      self << params.join << $\.to_s
     end
 
     def printf(aFormatString, *params)
