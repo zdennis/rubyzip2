@@ -1,8 +1,8 @@
 doc
-pkg
 tmp/*
 .DS_Store
 .yardoc
+*.gem
 *.db
 *.log
 *.swp
