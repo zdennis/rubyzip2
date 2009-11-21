@@ -58,7 +58,7 @@ class TestFiles
   def TestFiles.ensure_dir(name) 
     if File.exists?(name)
       return if File.stat(name).directory?
-      File.delete(name)
+      FileUtils.rm(name)
     end
     Dir.mkdir(name)
   end

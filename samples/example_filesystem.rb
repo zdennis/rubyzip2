@@ -3,11 +3,11 @@
 $: << "../lib"
 
 require 'zip/zipfilesystem'
-require 'ftools'
+require 'fileutils'
 
 EXAMPLE_ZIP = "filesystem.zip"
 
-File.delete(EXAMPLE_ZIP) if File.exists?(EXAMPLE_ZIP)
+FileUtils.rm(EXAMPLE_ZIP) if File.exists?(EXAMPLE_ZIP)
 
 Zip::ZipFile.open(EXAMPLE_ZIP, Zip::ZipFile::CREATE) {
   |zf|
