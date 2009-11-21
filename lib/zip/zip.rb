@@ -6,6 +6,7 @@ require 'stringio'
 require 'zlib'
 require 'zip/stdrubyext'
 require 'zip/ioextras'
+require 'zip/version'
 
 if Tempfile.superclass == SimpleDelegator
   require 'zip/tempfile_bugfixed'
@@ -19,8 +20,6 @@ module Zlib  #:nodoc:all
 end
 
 module Zip
-
-  VERSION = '0.9.1'
 
   RUBY_MINOR_VERSION = RUBY_VERSION.split(".")[1].to_i
 
