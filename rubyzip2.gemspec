@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern", "Thomas Sondergaard"]
-  s.date = %q{2009-11-20}
+  s.date = %q{2009-11-28}
   s.description = %q{rubyzip2 is a Ruby library for reading and writing Zip files. Unlike the official rubyzip, rubyzip2 is compatible with Ruby 1.9.1.}
   s.email = %q{postmodern.mod3@gmail.com}
   s.extra_rdoc_files = [
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "lib/zip/ioextras.rb",
      "lib/zip/stdrubyext.rb",
      "lib/zip/tempfile_bugfixed.rb",
+     "lib/zip/version.rb",
      "lib/zip/zip.rb",
      "lib/zip/zipfilesystem.rb",
      "lib/zip/ziprequire.rb",

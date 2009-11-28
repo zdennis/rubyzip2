@@ -27,6 +27,7 @@ begin
       'lib/zip/zip.rb',
       'lib/zip/zipfilesystem.rb',
       'lib/zip/ziprequire.rb',
+      'lib/zip/version.rb',
       'samples/example.rb',
       'samples/example_filesystem.rb',
       'samples/gtk_zip.rb',
