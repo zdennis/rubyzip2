@@ -21,6 +21,7 @@ begin
       'TODO.txt',
       'ChangeLog.txt',
       'Rakefile',
+      'lib/zip.rb',
       'lib/zip/ioextras.rb',
       'lib/zip/stdrubyext.rb',
       'lib/zip/tempfile_bugfixed.rb',
