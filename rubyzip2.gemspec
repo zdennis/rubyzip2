@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "NEWS.txt",
      "Rakefile",
      "TODO.txt",
+     "lib/zip.rb",
      "lib/zip/ioextras.rb",
      "lib/zip/stdrubyext.rb",
      "lib/zip/tempfile_bugfixed.rb",
