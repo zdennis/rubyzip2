@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{rubyzip2}
+  s.name = %q{zdennis-rubyzip2}
   s.version = "2.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Postmodern", "Thomas Sondergaard"]
-  s.date = %q{2009-12-07}
+  s.date = %q{2011-09-14}
   s.description = %q{rubyzip2 is a Ruby library for reading and writing Zip files. Unlike the official rubyzip, rubyzip2 is compatible with Ruby 1.9.1.}
-  s.email = %q{postmodern.mod3@gmail.com}
+  s.email = %q{zach.dennis@gmail.com}
   s.extra_rdoc_files = [
     "ChangeLog.txt",
      "README"
