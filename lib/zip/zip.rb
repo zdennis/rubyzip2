@@ -519,6 +519,8 @@ module Zip
       @name              = io.read(nameLength)
       extra              = io.read(extraLength)
 
+      until @name.sub!('\\', '/') == nil do end # some zip files use backslashes instead of slashes as path separators
+
       if (extra && extra.length != extraLength)
 	raise ZipError, "Truncated local zip entry header"
       else
@@ -594,6 +596,7 @@ module Zip
       set_time(lastModDate, lastModTime)
       
       @name                  = io.read(nameLength)
+      until @name.sub!('\\', '/') == nil do end # some zip files use backslashes instead of slashes as path separators
       if ZipExtraField === @extra
         @extra.merge(io.read(extraLength))
       else
@@ -1208,7 +1211,11 @@ module Zip
       @sizeInBytes                          = ZipEntry::read_zip_long(buf)
       @cdirOffset                           = ZipEntry::read_zip_long(buf)
       commentLength                         = ZipEntry::read_zip_short(buf)
-      @comment                              = buf.read(commentLength)
+      if commentLength <= 0
+        @comment                            = buf.slice!(0, buf.size)
+      else
+        @comment                            = buf.read(commentLength)
+      end
       raise ZipError, "Zip consistency problem while reading eocd structure" unless buf.size == 0
     end
     
